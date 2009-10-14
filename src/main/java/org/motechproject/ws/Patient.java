@@ -1,5 +1,7 @@
 package org.motechproject.ws;
 
+import java.io.Serializable;
+
 /**
  * A simple Patient data transfer object.
  *
@@ -7,7 +9,7 @@ package org.motechproject.ws;
  * Date Created Jul 31, 2009
  *
  */
-public class Patient {
+public class Patient implements Serializable{
     private String name;
     private String serialNumber;
 
