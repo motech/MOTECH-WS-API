@@ -10,6 +10,15 @@ public class NameValuePair implements Serializable{
     private String name;
     private String value;
 
+    public NameValuePair(){
+        
+    }
+    
+    public NameValuePair(String name, String value){
+        this.name = name;
+        this.value = value;
+    }
+    
     public String getName() {
         return name;
     }

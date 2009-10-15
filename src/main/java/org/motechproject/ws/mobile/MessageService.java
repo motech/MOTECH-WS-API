@@ -1,6 +1,7 @@
 package org.motechproject.ws.mobile;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.jws.WebMethod;
