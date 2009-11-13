@@ -43,7 +43,7 @@ public interface RegistrarService {
 			@WebParam(name = "language") String language,
 			@WebParam(name = "mediaType") MediaType mediaType,
 			@WebParam(name = "deliveryTime") DeliveryTime deliveryTime,
-			@WebParam(name = "regimen") String[] regimen);
+			@WebParam(name = "messagePrograms") String[] messagePrograms);
 
 	@WebMethod
 	public void recordMaternalVisit(
