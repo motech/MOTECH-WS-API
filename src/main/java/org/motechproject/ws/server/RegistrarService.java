@@ -21,14 +21,6 @@ import org.motechproject.ws.MediaType;
 public interface RegistrarService {
 
 	@WebMethod
-	public void registerClinic(@WebParam(name = "name") String name);
-
-	@WebMethod
-	public void registerNurse(@WebParam(name = "name") String name,
-			@WebParam(name = "phoneNumber") String phoneNumber,
-			@WebParam(name = "clinic") String clinic);
-
-	@WebMethod
 	public void registerPatient(
 			@WebParam(name = "nursePhoneNumber") String nursePhoneNumber,
 			@WebParam(name = "serialId") String serialId,
