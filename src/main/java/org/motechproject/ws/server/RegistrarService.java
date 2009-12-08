@@ -64,9 +64,11 @@ public interface RegistrarService {
 	@WebMethod
 	public void recordGeneralVisit(
 			@WebParam(name = "clinicName") String clinicName,
+			@WebParam(name = "patientSerial") String patientSerial,
 			@WebParam(name = "patientGender") Gender patientGender,
 			@WebParam(name = "patientAge") Integer patientAge,
 			@WebParam(name = "patientDiagnosis") Integer patientDiagnosis,
+			@WebParam(name = "patientReferral") Boolean patientReferral,
 			@WebParam(name = "encounterDate") Date encounterDate);
 
 	@WebMethod
