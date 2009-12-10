@@ -69,7 +69,8 @@ public interface RegistrarService {
 			@WebParam(name = "patientAge") Integer patientAge,
 			@WebParam(name = "patientDiagnosis") Integer patientDiagnosis,
 			@WebParam(name = "patientReferral") Boolean patientReferral,
-			@WebParam(name = "encounterDate") Date encounterDate);
+			@WebParam(name = "encounterDate") Date encounterDate)
+			throws ValidationException;
 
 	@WebMethod
 	public void log(@WebParam(name = "type") LogType type,
