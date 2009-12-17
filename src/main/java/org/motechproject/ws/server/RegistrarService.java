@@ -63,13 +63,13 @@ public interface RegistrarService {
 
 	@WebMethod
 	public void recordGeneralVisit(
-			@WebParam(name = "clinicName") String clinicName,
+			@WebParam(name = "clinicId") Integer clinicId,
+			@WebParam(name = "visitDate") Date visitDate,
 			@WebParam(name = "patientSerial") String patientSerial,
 			@WebParam(name = "patientGender") Gender patientGender,
-			@WebParam(name = "patientAge") Integer patientAge,
+			@WebParam(name = "patientBirthDate") Date patientBirthDate,
 			@WebParam(name = "patientDiagnosis") Integer patientDiagnosis,
-			@WebParam(name = "patientReferral") Boolean patientReferral,
-			@WebParam(name = "encounterDate") Date encounterDate)
+			@WebParam(name = "patientReferral") Boolean patientReferral)
 			throws ValidationException;
 
 	@WebMethod
