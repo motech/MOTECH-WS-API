@@ -6,6 +6,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
+import org.motechproject.ws.ContactNumberType;
 import org.motechproject.ws.Gender;
 import org.motechproject.ws.LogType;
 
@@ -25,6 +26,17 @@ public interface RegistrarService {
 			@WebParam(name = "childDob") Date childDob,
 			@WebParam(name = "childGender") Gender childGender,
 			@WebParam(name = "childFirstName") String childFirstName,
+			@WebParam(name = "nhis") String nhis,
+			@WebParam(name = "nhisExpires") Date nhisExpires);
+
+	@WebMethod
+	public void editPatient(
+			@WebParam(name = "chpsId") String chpsId,
+			@WebParam(name = "patientRegNum") String patientRegNum,
+			@WebParam(name = "primaryPhone") String primaryPhone,
+			@WebParam(name = "primaryPhoneType") ContactNumberType primaryPhoneType,
+			@WebParam(name = "secondaryPhone") String secondaryPhone,
+			@WebParam(name = "secondaryPhoneType") ContactNumberType secondaryPhoneType,
 			@WebParam(name = "nhis") String nhis,
 			@WebParam(name = "nhisExpires") Date nhisExpires);
 
