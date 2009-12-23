@@ -18,6 +18,17 @@ import org.motechproject.ws.LogType;
 public interface RegistrarService {
 
 	@WebMethod
+	public void registerChild(@WebParam(name = "chpsId") String chpsId,
+			@WebParam(name = "regDate") Date regDate,
+			@WebParam(name = "motherRegNum") String motherRegNum,
+			@WebParam(name = "childRegNum") String childRegNum,
+			@WebParam(name = "childDob") Date childDob,
+			@WebParam(name = "childGender") Gender childGender,
+			@WebParam(name = "childFirstName") String childFirstName,
+			@WebParam(name = "nhis") String nhis,
+			@WebParam(name = "nhisExpires") Date nhisExpires);
+
+	@WebMethod
 	public void recordGeneralVisit(
 			@WebParam(name = "clinicId") Integer clinicId,
 			@WebParam(name = "visitDate") Date visitDate,
