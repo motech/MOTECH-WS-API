@@ -41,6 +41,10 @@ public interface RegistrarService {
 			@WebParam(name = "nhisExpires") Date nhisExpires);
 
 	@WebMethod
+	public void stopPregnancyProgram(@WebParam(name = "chpsId") String chpsId,
+			@WebParam(name = "patientRegNum") String patientRegNum);
+
+	@WebMethod
 	public void recordGeneralVisit(
 			@WebParam(name = "clinicId") Integer clinicId,
 			@WebParam(name = "visitDate") Date visitDate,
