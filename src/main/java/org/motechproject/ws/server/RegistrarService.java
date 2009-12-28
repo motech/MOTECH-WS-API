@@ -27,7 +27,8 @@ public interface RegistrarService {
 			@WebParam(name = "childGender") Gender childGender,
 			@WebParam(name = "childFirstName") String childFirstName,
 			@WebParam(name = "nhis") String nhis,
-			@WebParam(name = "nhisExpires") Date nhisExpires);
+			@WebParam(name = "nhisExpires") Date nhisExpires)
+			throws ValidationException;
 
 	@WebMethod
 	public void editPatient(
@@ -38,11 +39,13 @@ public interface RegistrarService {
 			@WebParam(name = "secondaryPhone") String secondaryPhone,
 			@WebParam(name = "secondaryPhoneType") ContactNumberType secondaryPhoneType,
 			@WebParam(name = "nhis") String nhis,
-			@WebParam(name = "nhisExpires") Date nhisExpires);
+			@WebParam(name = "nhisExpires") Date nhisExpires)
+			throws ValidationException;
 
 	@WebMethod
 	public void stopPregnancyProgram(@WebParam(name = "chpsId") String chpsId,
-			@WebParam(name = "patientRegNum") String patientRegNum);
+			@WebParam(name = "patientRegNum") String patientRegNum)
+			throws ValidationException;
 
 	@WebMethod
 	public void recordGeneralVisit(
