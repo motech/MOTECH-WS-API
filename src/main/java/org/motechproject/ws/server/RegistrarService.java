@@ -30,7 +30,8 @@ public interface RegistrarService {
 			@WebParam(name = "ttDose") Integer ttDose,
 			@WebParam(name = "iptDose") Integer iptDose,
 			@WebParam(name = "itnUse") Boolean itnUse,
-			@WebParam(name = "hivStatus") HIVStatus hivStatus);
+			@WebParam(name = "hivStatus") HIVStatus hivStatus)
+			throws ValidationException;
 
 	@WebMethod
 	public void recordPregnancyTermination(
@@ -38,7 +39,8 @@ public interface RegistrarService {
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "patientId") String patientId,
 			@WebParam(name = "abortionType") Integer abortionType,
-			@WebParam(name = "complication") Integer complication);
+			@WebParam(name = "complication") Integer complication)
+			throws ValidationException;
 
 	@WebMethod
 	public void recordPregnancyDelivery(
@@ -62,7 +64,8 @@ public interface RegistrarService {
 			@WebParam(name = "child2Sex") Gender child2Sex,
 			@WebParam(name = "child2FirstName") String child2FirstName,
 			@WebParam(name = "child2OPV") Boolean child2OPV,
-			@WebParam(name = "child2BCG") Boolean child2BCG);
+			@WebParam(name = "child2BCG") Boolean child2BCG)
+			throws ValidationException;
 
 	@WebMethod
 	public void recordMotherPPCVisit(
@@ -71,13 +74,14 @@ public interface RegistrarService {
 			@WebParam(name = "patientId") String patientId,
 			@WebParam(name = "visitNumber") Integer visitNumber,
 			@WebParam(name = "vitaminA") Boolean vitaminA,
-			@WebParam(name = "ttDose") Integer ttDose);
+			@WebParam(name = "ttDose") Integer ttDose)
+			throws ValidationException;
 
 	@WebMethod
 	public void recordDeath(@WebParam(name = "facilityId") String facilityId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "patientId") String patientId,
-			@WebParam(name = "cause") Integer cause);
+			@WebParam(name = "cause") Integer cause) throws ValidationException;
 
 	@WebMethod
 	public void recordChildPNCVisit(
@@ -90,7 +94,8 @@ public interface RegistrarService {
 			@WebParam(name = "yellowFever") Boolean yellowFever,
 			@WebParam(name = "csm") Boolean csm,
 			@WebParam(name = "ipti") Boolean ipti,
-			@WebParam(name = "vitaminA") Boolean vitaminA);
+			@WebParam(name = "vitaminA") Boolean vitaminA)
+			throws ValidationException;
 
 	@WebMethod
 	public void registerChild(@WebParam(name = "chpsId") String chpsId,
@@ -143,7 +148,8 @@ public interface RegistrarService {
 			@WebParam(name = "newCase") Boolean newCase,
 			@WebParam(name = "diagnosis") Integer diagnosis,
 			@WebParam(name = "secondDiagnosis") Integer secondDiagnosis,
-			@WebParam(name = "referral") Boolean referral);
+			@WebParam(name = "referral") Boolean referral)
+			throws ValidationException;
 
 	@WebMethod
 	public void recordMotherVisit(
@@ -154,7 +160,8 @@ public interface RegistrarService {
 			@WebParam(name = "newCase") Boolean newCase,
 			@WebParam(name = "diagnosis") Integer diagnosis,
 			@WebParam(name = "secondDiagnosis") Integer secondDiagnosis,
-			@WebParam(name = "referral") Boolean referral);
+			@WebParam(name = "referral") Boolean referral)
+			throws ValidationException;
 
 	@WebMethod
 	public void log(@WebParam(name = "type") LogType type,
