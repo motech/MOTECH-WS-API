@@ -6,8 +6,11 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
+import org.motechproject.ws.BirthOutcome;
 import org.motechproject.ws.ContactNumberType;
+import org.motechproject.ws.DeliveredBy;
 import org.motechproject.ws.Gender;
+import org.motechproject.ws.HIVStatus;
 import org.motechproject.ws.LogType;
 
 /**
@@ -17,6 +20,77 @@ import org.motechproject.ws.LogType;
  */
 @WebService
 public interface RegistrarService {
+
+	@WebMethod
+	public void recordMotherANCVisit(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "date") Date date,
+			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "visitNumber") Integer visitNumber,
+			@WebParam(name = "ttDose") Integer ttDose,
+			@WebParam(name = "iptDose") Integer iptDose,
+			@WebParam(name = "itnUse") Boolean itnUse,
+			@WebParam(name = "hivStatus") HIVStatus hivStatus);
+
+	@WebMethod
+	public void recordPregnancyTermination(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "date") Date date,
+			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "abortionType") Integer abortionType,
+			@WebParam(name = "complication") Integer complication);
+
+	@WebMethod
+	public void recordPregnancyDelivery(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "date") Date date,
+			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "method") Integer method,
+			@WebParam(name = "outcome") Integer outcome,
+			@WebParam(name = "location") Integer location,
+			@WebParam(name = "deliveredBy") DeliveredBy deliveredBy,
+			@WebParam(name = "maternalDeath") Boolean maternalDeath,
+			@WebParam(name = "cause") Integer cause,
+			@WebParam(name = "child1Outcome") BirthOutcome child1Outcome,
+			@WebParam(name = "child1PatientId") String child1PatientId,
+			@WebParam(name = "child1Sex") Gender child1Sex,
+			@WebParam(name = "child1FirstName") String child1FirstName,
+			@WebParam(name = "child1OPV") Boolean child1OPV,
+			@WebParam(name = "child1BCG") Boolean child1BCG,
+			@WebParam(name = "child2Outcome") BirthOutcome child2Outcome,
+			@WebParam(name = "child2PatientId") String child2PatientId,
+			@WebParam(name = "child2Sex") Gender child2Sex,
+			@WebParam(name = "child2FirstName") String child2FirstName,
+			@WebParam(name = "child2OPV") Boolean child2OPV,
+			@WebParam(name = "child2BCG") Boolean child2BCG);
+
+	@WebMethod
+	public void recordMotherPPCVisit(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "date") Date date,
+			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "visitNumber") Integer visitNumber,
+			@WebParam(name = "vitaminA") Boolean vitaminA,
+			@WebParam(name = "ttDose") Integer ttDose);
+
+	@WebMethod
+	public void recordDeath(@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "date") Date date,
+			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "cause") Integer cause);
+
+	@WebMethod
+	public void recordChildPNCVisit(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "date") Date date,
+			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "bcg") Boolean bcg,
+			@WebParam(name = "opvDose") Integer opvDose,
+			@WebParam(name = "pentaDose") Integer pentaDose,
+			@WebParam(name = "yellowFever") Boolean yellowFever,
+			@WebParam(name = "csm") Boolean csm,
+			@WebParam(name = "ipti") Boolean ipti,
+			@WebParam(name = "vitaminA") Boolean vitaminA);
 
 	@WebMethod
 	public void registerChild(@WebParam(name = "chpsId") String chpsId,
@@ -49,14 +123,38 @@ public interface RegistrarService {
 
 	@WebMethod
 	public void recordGeneralVisit(
-			@WebParam(name = "clinicId") Integer clinicId,
-			@WebParam(name = "visitDate") Date visitDate,
-			@WebParam(name = "patientSerial") String patientSerial,
-			@WebParam(name = "patientGender") Gender patientGender,
-			@WebParam(name = "patientBirthDate") Date patientBirthDate,
-			@WebParam(name = "patientDiagnosis") Integer patientDiagnosis,
-			@WebParam(name = "patientReferral") Boolean patientReferral)
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "date") Date date,
+			@WebParam(name = "serialNumber") String serialNumber,
+			@WebParam(name = "sex") Gender sex,
+			@WebParam(name = "birthDate") Date birthDate,
+			@WebParam(name = "insured") Boolean insured,
+			@WebParam(name = "diagnosis") Integer diagnosis,
+			@WebParam(name = "secondDiagnosis") Integer secondDiagnosis,
+			@WebParam(name = "referral") Boolean referral)
 			throws ValidationException;
+
+	@WebMethod
+	public void recordChildVisit(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "date") Date date,
+			@WebParam(name = "serialNumber") String serialNumber,
+			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "newCase") Boolean newCase,
+			@WebParam(name = "diagnosis") Integer diagnosis,
+			@WebParam(name = "secondDiagnosis") Integer secondDiagnosis,
+			@WebParam(name = "referral") Boolean referral);
+
+	@WebMethod
+	public void recordMotherVisit(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "date") Date date,
+			@WebParam(name = "serialNumber") String serialNumber,
+			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "newCase") Boolean newCase,
+			@WebParam(name = "diagnosis") Integer diagnosis,
+			@WebParam(name = "secondDiagnosis") Integer secondDiagnosis,
+			@WebParam(name = "referral") Boolean referral);
 
 	@WebMethod
 	public void log(@WebParam(name = "type") LogType type,
