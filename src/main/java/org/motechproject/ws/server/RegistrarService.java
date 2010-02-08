@@ -134,6 +134,7 @@ public interface RegistrarService {
 			@WebParam(name = "sex") Gender sex,
 			@WebParam(name = "birthDate") Date birthDate,
 			@WebParam(name = "insured") Boolean insured,
+			@WebParam(name = "newCase") Boolean newCase,
 			@WebParam(name = "diagnosis") Integer diagnosis,
 			@WebParam(name = "secondDiagnosis") Integer secondDiagnosis,
 			@WebParam(name = "referral") Boolean referral)
