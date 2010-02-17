@@ -22,8 +22,7 @@ import org.motechproject.ws.LogType;
 public interface RegistrarService {
 
 	@WebMethod
-	public void recordMotherANCVisit(
-			@WebParam(name = "facilityId") String facilityId,
+	public void recordMotherANCVisit(@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "patientId") String patientId,
 			@WebParam(name = "visitNumber") Integer visitNumber,
@@ -35,7 +34,7 @@ public interface RegistrarService {
 
 	@WebMethod
 	public void recordPregnancyTermination(
-			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "patientId") String patientId,
 			@WebParam(name = "abortionType") Integer abortionType,
@@ -44,7 +43,7 @@ public interface RegistrarService {
 
 	@WebMethod
 	public void recordPregnancyDelivery(
-			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "patientId") String patientId,
 			@WebParam(name = "method") Integer method,
@@ -68,8 +67,7 @@ public interface RegistrarService {
 			throws ValidationException;
 
 	@WebMethod
-	public void recordMotherPPCVisit(
-			@WebParam(name = "facilityId") String facilityId,
+	public void recordMotherPPCVisit(@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "patientId") String patientId,
 			@WebParam(name = "visitNumber") Integer visitNumber,
@@ -78,14 +76,13 @@ public interface RegistrarService {
 			throws ValidationException;
 
 	@WebMethod
-	public void recordDeath(@WebParam(name = "facilityId") String facilityId,
+	public void recordDeath(@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "patientId") String patientId,
 			@WebParam(name = "cause") Integer cause) throws ValidationException;
 
 	@WebMethod
-	public void recordChildPNCVisit(
-			@WebParam(name = "facilityId") String facilityId,
+	public void recordChildPNCVisit(@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "patientId") String patientId,
 			@WebParam(name = "bcg") Boolean bcg,
@@ -93,6 +90,7 @@ public interface RegistrarService {
 			@WebParam(name = "pentaDose") Integer pentaDose,
 			@WebParam(name = "yellowFever") Boolean yellowFever,
 			@WebParam(name = "csm") Boolean csm,
+			@WebParam(name = "measles") Boolean measles,
 			@WebParam(name = "ipti") Boolean ipti,
 			@WebParam(name = "vitaminA") Boolean vitaminA)
 			throws ValidationException;
@@ -127,8 +125,7 @@ public interface RegistrarService {
 			throws ValidationException;
 
 	@WebMethod
-	public void recordGeneralVisit(
-			@WebParam(name = "facilityId") String facilityId,
+	public void recordGeneralVisit(@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "serialNumber") String serialNumber,
 			@WebParam(name = "sex") Gender sex,
@@ -141,8 +138,7 @@ public interface RegistrarService {
 			throws ValidationException;
 
 	@WebMethod
-	public void recordChildVisit(
-			@WebParam(name = "facilityId") String facilityId,
+	public void recordChildVisit(@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "serialNumber") String serialNumber,
 			@WebParam(name = "patientId") String patientId,
@@ -153,8 +149,7 @@ public interface RegistrarService {
 			throws ValidationException;
 
 	@WebMethod
-	public void recordMotherVisit(
-			@WebParam(name = "facilityId") String facilityId,
+	public void recordMotherVisit(@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "serialNumber") String serialNumber,
 			@WebParam(name = "patientId") String patientId,
