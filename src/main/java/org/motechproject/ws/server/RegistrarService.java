@@ -97,12 +97,11 @@ public interface RegistrarService {
 
 	@WebMethod
 	public void registerChild(@WebParam(name = "chpsId") String chpsId,
-			@WebParam(name = "regDate") Date regDate,
-			@WebParam(name = "motherRegNum") String motherRegNum,
-			@WebParam(name = "childRegNum") String childRegNum,
-			@WebParam(name = "childDob") Date childDob,
-			@WebParam(name = "childGender") Gender childGender,
-			@WebParam(name = "childFirstName") String childFirstName,
+			@WebParam(name = "motherId") String motherId,
+			@WebParam(name = "childId") String childId,
+			@WebParam(name = "birthDate") Date birthDate,
+			@WebParam(name = "sex") Gender sex,
+			@WebParam(name = "firstName") String firstName,
 			@WebParam(name = "nhis") String nhis,
 			@WebParam(name = "nhisExpires") Date nhisExpires)
 			throws ValidationException;
@@ -110,7 +109,7 @@ public interface RegistrarService {
 	@WebMethod
 	public void editPatient(
 			@WebParam(name = "chpsId") String chpsId,
-			@WebParam(name = "patientRegNum") String patientRegNum,
+			@WebParam(name = "patientId") String patientId,
 			@WebParam(name = "primaryPhone") String primaryPhone,
 			@WebParam(name = "primaryPhoneType") ContactNumberType primaryPhoneType,
 			@WebParam(name = "secondaryPhone") String secondaryPhone,
@@ -121,7 +120,7 @@ public interface RegistrarService {
 
 	@WebMethod
 	public void stopPregnancyProgram(@WebParam(name = "chpsId") String chpsId,
-			@WebParam(name = "patientRegNum") String patientRegNum)
+			@WebParam(name = "patientId") String patientId)
 			throws ValidationException;
 
 	@WebMethod
