@@ -7,11 +7,13 @@ import javax.jws.WebParam;
 import javax.jws.WebService;
 
 import org.motechproject.ws.BirthOutcome;
+import org.motechproject.ws.Care;
 import org.motechproject.ws.ContactNumberType;
 import org.motechproject.ws.DeliveredBy;
 import org.motechproject.ws.Gender;
 import org.motechproject.ws.HIVStatus;
 import org.motechproject.ws.LogType;
+import org.motechproject.ws.Patient;
 
 /**
  * The service endpoint interface for the major motech server web service
@@ -24,7 +26,7 @@ public interface RegistrarService {
 	@WebMethod
 	public void recordMotherANCVisit(@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
-			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "motechId") String motechId,
 			@WebParam(name = "visitNumber") Integer visitNumber,
 			@WebParam(name = "ttDose") Integer ttDose,
 			@WebParam(name = "iptDose") Integer iptDose,
@@ -36,7 +38,7 @@ public interface RegistrarService {
 	public void recordPregnancyTermination(
 			@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
-			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "motechId") String motechId,
 			@WebParam(name = "abortionType") Integer abortionType,
 			@WebParam(name = "complication") Integer complication)
 			throws ValidationException;
@@ -45,7 +47,7 @@ public interface RegistrarService {
 	public void recordPregnancyDelivery(
 			@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
-			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "motechId") String motechId,
 			@WebParam(name = "method") Integer method,
 			@WebParam(name = "outcome") Integer outcome,
 			@WebParam(name = "location") Integer location,
@@ -53,13 +55,13 @@ public interface RegistrarService {
 			@WebParam(name = "maternalDeath") Boolean maternalDeath,
 			@WebParam(name = "cause") Integer cause,
 			@WebParam(name = "child1Outcome") BirthOutcome child1Outcome,
-			@WebParam(name = "child1PatientId") String child1PatientId,
+			@WebParam(name = "child1MotechId") String child1MotechId,
 			@WebParam(name = "child1Sex") Gender child1Sex,
 			@WebParam(name = "child1FirstName") String child1FirstName,
 			@WebParam(name = "child1OPV") Boolean child1OPV,
 			@WebParam(name = "child1BCG") Boolean child1BCG,
 			@WebParam(name = "child2Outcome") BirthOutcome child2Outcome,
-			@WebParam(name = "child2PatientId") String child2PatientId,
+			@WebParam(name = "child2MotechId") String child2MotechId,
 			@WebParam(name = "child2Sex") Gender child2Sex,
 			@WebParam(name = "child2FirstName") String child2FirstName,
 			@WebParam(name = "child2OPV") Boolean child2OPV,
@@ -69,7 +71,7 @@ public interface RegistrarService {
 	@WebMethod
 	public void recordMotherPPCVisit(@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
-			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "motechId") String motechId,
 			@WebParam(name = "visitNumber") Integer visitNumber,
 			@WebParam(name = "vitaminA") Boolean vitaminA,
 			@WebParam(name = "ttDose") Integer ttDose)
@@ -78,13 +80,13 @@ public interface RegistrarService {
 	@WebMethod
 	public void recordDeath(@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
-			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "motechId") String motechId,
 			@WebParam(name = "cause") Integer cause) throws ValidationException;
 
 	@WebMethod
 	public void recordChildPNCVisit(@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
-			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "motechId") String motechId,
 			@WebParam(name = "bcg") Boolean bcg,
 			@WebParam(name = "opvDose") Integer opvDose,
 			@WebParam(name = "pentaDose") Integer pentaDose,
@@ -97,8 +99,8 @@ public interface RegistrarService {
 
 	@WebMethod
 	public void registerChild(@WebParam(name = "chpsId") String chpsId,
-			@WebParam(name = "motherId") String motherId,
-			@WebParam(name = "childId") String childId,
+			@WebParam(name = "motherMotechId") String motherMotechId,
+			@WebParam(name = "childMotechId") String childMotechId,
 			@WebParam(name = "birthDate") Date birthDate,
 			@WebParam(name = "sex") Gender sex,
 			@WebParam(name = "firstName") String firstName,
@@ -109,7 +111,7 @@ public interface RegistrarService {
 	@WebMethod
 	public void editPatient(
 			@WebParam(name = "chpsId") String chpsId,
-			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "motechId") String motechId,
 			@WebParam(name = "primaryPhone") String primaryPhone,
 			@WebParam(name = "primaryPhoneType") ContactNumberType primaryPhoneType,
 			@WebParam(name = "secondaryPhone") String secondaryPhone,
@@ -120,7 +122,7 @@ public interface RegistrarService {
 
 	@WebMethod
 	public void stopPregnancyProgram(@WebParam(name = "chpsId") String chpsId,
-			@WebParam(name = "patientId") String patientId)
+			@WebParam(name = "motechId") String motechId)
 			throws ValidationException;
 
 	@WebMethod
@@ -140,7 +142,7 @@ public interface RegistrarService {
 	public void recordChildVisit(@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "serialNumber") String serialNumber,
-			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "motechId") String motechId,
 			@WebParam(name = "newCase") Boolean newCase,
 			@WebParam(name = "diagnosis") Integer diagnosis,
 			@WebParam(name = "secondDiagnosis") Integer secondDiagnosis,
@@ -151,12 +153,71 @@ public interface RegistrarService {
 	public void recordMotherVisit(@WebParam(name = "chpsId") String chpsId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "serialNumber") String serialNumber,
-			@WebParam(name = "patientId") String patientId,
+			@WebParam(name = "motechId") String motechId,
 			@WebParam(name = "newCase") Boolean newCase,
 			@WebParam(name = "diagnosis") Integer diagnosis,
 			@WebParam(name = "secondDiagnosis") Integer secondDiagnosis,
 			@WebParam(name = "referral") Boolean referral)
 			throws ValidationException;
+
+	@WebMethod
+	public Care[] queryANCDefaulters(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "chpsId") String chpsId);
+
+	@WebMethod
+	public Care[] queryTTDefaulters(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "chpsId") String chpsId);
+
+	@WebMethod
+	public Care[] queryPPCDefaulters(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "chpsId") String chpsId);
+
+	@WebMethod
+	public Care[] queryPNCDefaulters(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "chpsId") String chpsId);
+
+	@WebMethod
+	public Care[] queryCWCDefaulters(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "chpsId") String chpsId);
+
+	@WebMethod
+	public Patient[] queryUpcomingDeliveries(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "chpsId") String chpsId);
+
+	@WebMethod
+	public Patient[] queryRecentDeliveries(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "chpsId") String chpsId);
+
+	@WebMethod
+	public Patient[] queryOverdueDeliveries(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "chpsId") String chpsId);
+
+	@WebMethod
+	public Patient queryUpcomingCare(
+			@WebParam(name = "facilityId") String facilityId,
+			@WebParam(name = "chpsId") String chpsId,
+			@WebParam(name = "motechId") String motechId);
+
+	@WebMethod
+	public Patient[] queryMotechId(@WebParam(name = "chpsId") String chpsId,
+			@WebParam(name = "firstName") String firstName,
+			@WebParam(name = "lastName") String lastName,
+			@WebParam(name = "preferredName") String preferredName,
+			@WebParam(name = "birthDate") Date birthDate,
+			@WebParam(name = "nhis") String nhis,
+			@WebParam(name = "phoneNumber") String phoneNumber);
+
+	@WebMethod
+	public Patient queryPatient(@WebParam(name = "chpsId") String chpsId,
+			@WebParam(name = "motechId") String motechId);
 
 	@WebMethod
 	public void log(@WebParam(name = "type") LogType type,
