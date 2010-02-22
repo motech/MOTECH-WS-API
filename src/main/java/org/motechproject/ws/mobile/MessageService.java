@@ -1,12 +1,12 @@
 package org.motechproject.ws.mobile;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import org.motechproject.ws.Care;
 
 import org.motechproject.ws.ContactNumberType;
 import org.motechproject.ws.MediaType;
@@ -24,29 +24,95 @@ import org.motechproject.ws.Patient;
 public interface MessageService extends Serializable{
 
     /**
-     * Sends a message to a CHPS patient
+     * Sends a message to a registered patient
      *
-     * @param messageId Numeric key of the message to send
-     * @param clinic Location of patient's default CHPS compound
-     * @param serviceDate Date of current service delivery
+     * @param messageId Id of the message to send
+     * @param personalInfo List of name value pairs containing patient information
      * @param patientNumber Patient mobile contact number
      * @param patientNumberType Type of contact number. Possible values include PERSONAL, SHARED
-     * @param messageType Preferred message type. Possible values include TEXT, VOICE
-     * @return The id of the message sent
+     * @param langCode Code representing preferred communication language
+     * @param mediaType Patient's preferred communication medium
+     * @param notificationType Type of message to send to patient
+     * @param startDate Date to begin message sending attempts
+     * @param endDate Date to stop message sending attempts
+     * @return The status of the message
      */
     @WebMethod
     public MessageStatus sendPatientMessage(@WebParam(name="messageId") String messageId, @WebParam(name="personalInfo") NameValuePair[] personalInfo, @WebParam(name="patientNumber") String patientNumber, @WebParam(name="patientNumberType") ContactNumberType patientNumberType, @WebParam(name="langCode") String langCode, @WebParam(name="mediaType") MediaType mediaType, @WebParam(name="notificationType") Long notificationType, @WebParam(name="startDate")Date startDate, @WebParam(name="endDate")Date endDate);
 
     /**
-     * Sends a message to a CHPS Worker
+     * Sends a message to a registered CHPS worker
      *
-     * @param messageId Numeric key of the message to send
-     * @param workerName Name of CHPS worker recieving message
-     * @param workerNumber Worker mobile contact number
-     * @param patientList A List of patients requiring service from CHPS worker
-     * @return The id of the message sent
+     * @param messageId Id of the message to send
+     * @param personalInfo List of name value pairs containing patient information
+     * @param workerNumber CHPS worker's mobile contact number
+     * @param patients A List of patients requiring service from CHPS worker
+     * @param langCode  Code representing preferred communication language
+     * @param mediaType Patient's preferred communication medium
+     * @param notificationType Type of message to send to patient
+     * @param startDate Date to begin message sending attempts
+     * @param endDate Date to stop message sending attempts
+     * @return The status of the message
      */
     @WebMethod
     public MessageStatus sendCHPSMessage(@WebParam(name="messageId") String messageId, @WebParam(name="personalInfo") NameValuePair[] personalInfo, @WebParam(name="workerNumber") String workerNumber, @WebParam(name="patients") Patient[] patients, @WebParam(name="langCode") String langCode, @WebParam(name="mediaType") MediaType mediaType, @WebParam(name="notificationType") Long notificationType, @WebParam(name="startDate")Date startDate, @WebParam(name="endDate")Date endDate);
-    
+
+    /**
+     * Sends a list of care defaulters to a CHPS worker
+     *
+     * @param messageId Id of the message to send
+     * @param workerNumber CHPS worker's mobile contact number
+     * @param cares List of patient care options which have defaulters
+     * @param mediaType Patient's preferred communication medium
+     * @param startDate Date to begin message sending attempts
+     * @param endDate Date to stop message sending attempts
+     * @return The status of the message
+     */
+    @WebMethod
+    public MessageStatus sendDefaulterMessage(@WebParam(name = "messageId") String messageId,
+                                              @WebParam(name = "workerNumber") String workerNumber,
+                                              @WebParam(name = "cares") Care[] cares,
+                                              @WebParam(name = "media") MediaType mediaType,
+                                              @WebParam(name = "startDate") Date startDate,
+                                              @WebParam(name = "endDate") Date endDate);
+
+    /**
+     * Sends a list of patients within a delivery schedule to a CHPS worker
+     *
+     * @param messageId Id of the message to send
+     * @param workerNumber CHPS worker's mobile contact number
+     * @param patients List of patients with matching delivery status
+     * @param deliveryStatus Status of patient delivery. Expected values are 'Upcoming', 'Recent' and 'Overdue'
+     * @param mediaType Patient's preferred communication medium
+     * @param startDate Date to begin message sending attempts
+     * @param endDate Date to stop message sending attempts
+     * @return The status of the message
+     */
+    @WebMethod
+    public MessageStatus sendDeliveriesMessage(@WebParam(name = "messageId") String messageId,
+                                               @WebParam(name = "workerNumber") String workerNumber,
+                                               @WebParam(name = "patients") Patient[] patients,
+                                               @WebParam(name = "deliveryStatus") String deliveryStatus,
+                                               @WebParam(name = "mediaType") MediaType mediaType,
+                                               @WebParam(name = "startDate") Date startDate,
+                                               @WebParam(name = "endDate") Date endDate);
+
+    /**
+     * Sends a list of upcoming care for a particular patient to a CHPS worker
+     *
+     * @param messageId Id of the message to send
+     * @param workerNumber CHPS worker's mobile contact number
+     * @param patient patient due for care
+     * @param mediaType Patient's preferred communication medium
+     * @param startDate Date to begin message sending attempts
+     * @param endDate Date to stop message sending attempts
+     * @return The status of the message
+     */
+    @WebMethod
+    public MessageStatus sendUpcomingCaresMessage(@WebParam(name = "messageId") String messageId,
+                                                  @WebParam(name = "workerNumber") String workerNumber,
+                                                  @WebParam(name = "patient") Patient patient,
+                                                  @WebParam(name = "mediaType") MediaType mediaType,
+                                                  @WebParam(name = "startDate") Date startDate,
+                                                  @WebParam(name = "endDate") Date endDate);
 }
