@@ -7,7 +7,10 @@ import java.io.Serializable;
  * @author yoofi
  */
 public class NameValuePair implements Serializable{
-    private String name;
+
+	private static final long serialVersionUID = 5740132600380851218L;
+	
+	private String name;
     private String value;
 
     public NameValuePair(){
