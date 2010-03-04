@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.motechproject</groupId>
 	<artifactId>motech-wsapi</artifactId>
-	<version>1.0-M4-SNAPSHOT</version>
+	<version>1.0-M5-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>MoTeCH WS API</name>
 	<description>Web Services API for the MoTeCH mobile and server projects</description>
@@ -145,9 +145,9 @@
 	</build>
 
 	<scm>
-		<url>https://motech.rcg.usm.maine.edu/redmine/repositories/browse/motech-wsapi/branches/1.0-M4.X</url>
-		<connection>scm:svn:https://motech.rcg.usm.maine.edu/svn/motech-wsapi/branches/1.0-M4.X</connection>
-		<developerConnection>scm:svn:https://motech.rcg.usm.maine.edu/svn/motech-wsapi/branches/1.0-M4.X</developerConnection>
+		<url>https://motech.rcg.usm.maine.edu/redmine/repositories/browse/motech-wsapi/trunk</url>
+		<connection>scm:svn:https://motech.rcg.usm.maine.edu/svn/motech-wsapi/trunk</connection>
+		<developerConnection>scm:svn:https://motech.rcg.usm.maine.edu/svn/motech-wsapi/trunk</developerConnection>
 	</scm>
 
 	<profiles>
