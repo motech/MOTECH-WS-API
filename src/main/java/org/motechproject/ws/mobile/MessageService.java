@@ -115,4 +115,15 @@ public interface MessageService extends Serializable{
                                                   @WebParam(name = "mediaType") MediaType mediaType,
                                                   @WebParam(name = "startDate") Date startDate,
                                                   @WebParam(name = "endDate") Date endDate);
+
+    /**
+     * Sends an SMS message
+     *
+     * @param content the message to send
+     * @param recipient the phone number to receive the message
+     * @return
+     */
+    @WebMethod
+    public MessageStatus sendMessage(@WebParam(name = "content") String content,
+                                     @WebParam(name = "recipient") String recipient);
 }
