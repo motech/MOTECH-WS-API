@@ -163,48 +163,57 @@ public interface RegistrarService {
 	@WebMethod
 	public Care[] queryANCDefaulters(
 			@WebParam(name = "facilityId") String facilityId,
-			@WebParam(name = "chpsId") String chpsId);
+			@WebParam(name = "chpsId") String chpsId)
+			throws ValidationException;
 
 	@WebMethod
 	public Care[] queryTTDefaulters(
 			@WebParam(name = "facilityId") String facilityId,
-			@WebParam(name = "chpsId") String chpsId);
+			@WebParam(name = "chpsId") String chpsId)
+			throws ValidationException;
 
 	@WebMethod
 	public Care[] queryPPCDefaulters(
 			@WebParam(name = "facilityId") String facilityId,
-			@WebParam(name = "chpsId") String chpsId);
+			@WebParam(name = "chpsId") String chpsId)
+			throws ValidationException;
 
 	@WebMethod
 	public Care[] queryPNCDefaulters(
 			@WebParam(name = "facilityId") String facilityId,
-			@WebParam(name = "chpsId") String chpsId);
+			@WebParam(name = "chpsId") String chpsId)
+			throws ValidationException;
 
 	@WebMethod
 	public Care[] queryCWCDefaulters(
 			@WebParam(name = "facilityId") String facilityId,
-			@WebParam(name = "chpsId") String chpsId);
+			@WebParam(name = "chpsId") String chpsId)
+			throws ValidationException;
 
 	@WebMethod
 	public Patient[] queryUpcomingDeliveries(
 			@WebParam(name = "facilityId") String facilityId,
-			@WebParam(name = "chpsId") String chpsId);
+			@WebParam(name = "chpsId") String chpsId)
+			throws ValidationException;
 
 	@WebMethod
 	public Patient[] queryRecentDeliveries(
 			@WebParam(name = "facilityId") String facilityId,
-			@WebParam(name = "chpsId") String chpsId);
+			@WebParam(name = "chpsId") String chpsId)
+			throws ValidationException;
 
 	@WebMethod
 	public Patient[] queryOverdueDeliveries(
 			@WebParam(name = "facilityId") String facilityId,
-			@WebParam(name = "chpsId") String chpsId);
+			@WebParam(name = "chpsId") String chpsId)
+			throws ValidationException;
 
 	@WebMethod
 	public Patient queryUpcomingCare(
 			@WebParam(name = "facilityId") String facilityId,
 			@WebParam(name = "chpsId") String chpsId,
-			@WebParam(name = "motechId") String motechId);
+			@WebParam(name = "motechId") String motechId)
+			throws ValidationException;
 
 	@WebMethod
 	public Patient[] queryMotechId(@WebParam(name = "chpsId") String chpsId,
@@ -213,11 +222,13 @@ public interface RegistrarService {
 			@WebParam(name = "preferredName") String preferredName,
 			@WebParam(name = "birthDate") Date birthDate,
 			@WebParam(name = "nhis") String nhis,
-			@WebParam(name = "phoneNumber") String phoneNumber);
+			@WebParam(name = "phoneNumber") String phoneNumber)
+			throws ValidationException;
 
 	@WebMethod
 	public Patient queryPatient(@WebParam(name = "chpsId") String chpsId,
-			@WebParam(name = "motechId") String motechId);
+			@WebParam(name = "motechId") String motechId)
+			throws ValidationException;
 
 	@WebMethod
 	public void log(@WebParam(name = "type") LogType type,
