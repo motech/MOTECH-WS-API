@@ -65,7 +65,13 @@ public interface RegistrarService {
 			@WebParam(name = "child2Sex") Gender child2Sex,
 			@WebParam(name = "child2FirstName") String child2FirstName,
 			@WebParam(name = "child2OPV") Boolean child2OPV,
-			@WebParam(name = "child2BCG") Boolean child2BCG)
+			@WebParam(name = "child2BCG") Boolean child2BCG,
+			@WebParam(name = "child3Outcome") BirthOutcome child3Outcome,
+			@WebParam(name = "child3MotechId") String child3MotechId,
+			@WebParam(name = "child3Sex") Gender child3Sex,
+			@WebParam(name = "child3FirstName") String child3FirstName,
+			@WebParam(name = "child3OPV") Boolean child3OPV,
+			@WebParam(name = "child3BCG") Boolean child3BCG)
 			throws ValidationException;
 
 	@WebMethod
