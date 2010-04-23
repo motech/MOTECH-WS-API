@@ -35,10 +35,20 @@ public interface MessageService extends Serializable{
      * @param notificationType Type of message to send to patient
      * @param startDate Date to begin message sending attempts
      * @param endDate Date to stop message sending attempts
+     * @param recipientId String unique identifier of the recipient
      * @return The status of the message
      */
     @WebMethod
-    public MessageStatus sendPatientMessage(@WebParam(name="messageId") String messageId, @WebParam(name="personalInfo") NameValuePair[] personalInfo, @WebParam(name="patientNumber") String patientNumber, @WebParam(name="patientNumberType") ContactNumberType patientNumberType, @WebParam(name="langCode") String langCode, @WebParam(name="mediaType") MediaType mediaType, @WebParam(name="notificationType") Long notificationType, @WebParam(name="startDate")Date startDate, @WebParam(name="endDate")Date endDate);
+    public MessageStatus sendPatientMessage(@WebParam(name="messageId") String messageId, 
+    										@WebParam(name="personalInfo") NameValuePair[] personalInfo, 
+    										@WebParam(name="patientNumber") String patientNumber, 
+    										@WebParam(name="patientNumberType") ContactNumberType patientNumberType, 
+    										@WebParam(name="langCode") String langCode, 
+    										@WebParam(name="mediaType") MediaType mediaType, 
+    										@WebParam(name="notificationType") Long notificationType, 
+    										@WebParam(name="startDate")Date startDate, 
+    										@WebParam(name="endDate")Date endDate,
+    										@WebParam(name="recipientId")String recipientId);
 
     /**
      * Sends a message to a registered CHPS worker
