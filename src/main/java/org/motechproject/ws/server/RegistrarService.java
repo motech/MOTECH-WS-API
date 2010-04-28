@@ -226,6 +226,7 @@ public interface RegistrarService {
 			@WebParam(name = "motherMotechId") Integer motherMotechId,
 			@WebParam(name = "region") String region,
 			@WebParam(name = "district") String district,
+			@WebParam(name = "subDistrict") String subDistrict,
 			@WebParam(name = "community") String community,
 			@WebParam(name = "address") String address,
 			@WebParam(name = "phoneNumber") Integer phoneNumber,
