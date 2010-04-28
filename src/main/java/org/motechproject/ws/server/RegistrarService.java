@@ -383,13 +383,13 @@ public interface RegistrarService {
 			throws ValidationException;
 
 	@WebMethod
-	public Care[] queryPPCDefaulters(
+	public Care[] queryMotherPNCDefaulters(
 			@WebParam(name = "staffId") Integer staffId,
 			@WebParam(name = "facilityId") Integer facilityId)
 			throws ValidationException;
 
 	@WebMethod
-	public Care[] queryPNCDefaulters(
+	public Care[] queryChildPNCDefaulters(
 			@WebParam(name = "staffId") Integer staffId,
 			@WebParam(name = "facilityId") Integer facilityId)
 			throws ValidationException;
