@@ -334,9 +334,8 @@ public interface RegistrarService {
 			@WebParam(name = "actTreated") Boolean actTreated,
 			@WebParam(name = "newCase") Boolean newCase,
 			@WebParam(name = "referral") Boolean referral,
-			@WebParam(name = "comments") String comments
-
-	) throws ValidationException;
+			@WebParam(name = "comments") String comments)
+			throws ValidationException;
 
 	@WebMethod
 	public void recordChildVisit(@WebParam(name = "staffId") Integer staffId,
