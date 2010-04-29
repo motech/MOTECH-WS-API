@@ -60,7 +60,7 @@ public interface RegistrarService {
 			@WebParam(name = "hivTestResult") HIVResult hivTestResult,
 			@WebParam(name = "postTestCounseled") Boolean postTestCounseled,
 			@WebParam(name = "pmtctTreatment") Boolean pmtctTreatment,
-			@WebParam(name = "referral") Boolean referral,
+			@WebParam(name = "referred") Boolean referred,
 			@WebParam(name = "nextANCDate") Date nextANCDate,
 			@WebParam(name = "comments") String comments)
 			throws ValidationException;
@@ -75,7 +75,7 @@ public interface RegistrarService {
 			@WebParam(name = "procedure") Integer procedure,
 			@WebParam(name = "complications") Integer[] complications,
 			@WebParam(name = "maternalDeath") Boolean maternalDeath,
-			@WebParam(name = "referral") Boolean referral,
+			@WebParam(name = "referred") Boolean referred,
 			@WebParam(name = "postAbortionFPCounseled") Boolean postAbortionFPCounseled,
 			@WebParam(name = "postAbortionFPAccepted") Boolean postAbortionFPAccepted,
 			@WebParam(name = "comments") String comments)
@@ -132,7 +132,7 @@ public interface RegistrarService {
 			@WebParam(name = "location") Integer location,
 			@WebParam(name = "house") String house,
 			@WebParam(name = "community") String community,
-			@WebParam(name = "referral") Boolean referral,
+			@WebParam(name = "referred") Boolean referred,
 			@WebParam(name = "maleInvolved") Boolean maleInvolved,
 			@WebParam(name = "vitaminA") Boolean vitaminA,
 			@WebParam(name = "ttDose") Integer ttDose,
@@ -168,7 +168,7 @@ public interface RegistrarService {
 			@WebParam(name = "location") Integer location,
 			@WebParam(name = "house") String house,
 			@WebParam(name = "community") String community,
-			@WebParam(name = "referral") Boolean referral,
+			@WebParam(name = "referred") Boolean referred,
 			@WebParam(name = "maleInvolved") Boolean maleInvolved,
 			@WebParam(name = "weight") Double weight,
 			@WebParam(name = "temperature") Integer temperature,
@@ -334,7 +334,7 @@ public interface RegistrarService {
 			@WebParam(name = "rdtPositive") Boolean rdtPositive,
 			@WebParam(name = "actTreated") Boolean actTreated,
 			@WebParam(name = "newCase") Boolean newCase,
-			@WebParam(name = "referral") Boolean referral,
+			@WebParam(name = "referred") Boolean referred,
 			@WebParam(name = "comments") String comments)
 			throws ValidationException;
 
@@ -350,7 +350,7 @@ public interface RegistrarService {
 			@WebParam(name = "rdtPositive") Boolean rdtPositive,
 			@WebParam(name = "actTreated") Boolean actTreated,
 			@WebParam(name = "newCase") Boolean newCase,
-			@WebParam(name = "referral") Boolean referral,
+			@WebParam(name = "referred") Boolean referred,
 			@WebParam(name = "comments") String comments)
 			throws ValidationException;
 
@@ -366,7 +366,7 @@ public interface RegistrarService {
 			@WebParam(name = "rdtPositive") Boolean rdtPositive,
 			@WebParam(name = "actTreated") Boolean actTreated,
 			@WebParam(name = "newCase") Boolean newCase,
-			@WebParam(name = "referral") Boolean referral,
+			@WebParam(name = "referred") Boolean referred,
 			@WebParam(name = "comments") String comments)
 			throws ValidationException;
 
