@@ -451,6 +451,11 @@ public interface RegistrarService {
 			throws ValidationException;
 
 	@WebMethod
+	public String[] getPatientEnrollments(
+			@WebParam(name = "motechId") Integer motechId)
+			throws ValidationException;
+
+	@WebMethod
 	public void log(@WebParam(name = "type") LogType type,
 			@WebParam(name = "message") String message);
 
