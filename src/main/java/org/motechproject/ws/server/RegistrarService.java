@@ -123,6 +123,14 @@ public interface RegistrarService {
 			throws ValidationException;
 
 	@WebMethod
+	public void recordDeliveryNotification(
+			@WebParam(name = "staffId") Integer staffId,
+			@WebParam(name = "facilityId") Integer facilityId,
+			@WebParam(name = "datetime") Date datetime,
+			@WebParam(name = "motechId") Integer motechId)
+			throws ValidationException;
+
+	@WebMethod
 	public void recordMotherPNCVisit(
 			@WebParam(name = "staffId") Integer staffId,
 			@WebParam(name = "facilityId") Integer facilityId,
