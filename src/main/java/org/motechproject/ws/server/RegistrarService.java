@@ -214,7 +214,7 @@ public interface RegistrarService {
 			throws ValidationException;
 
 	@WebMethod
-	public void registerPatient(
+	public Patient registerPatient(
 			@WebParam(name = "staffId") Integer staffId,
 			@WebParam(name = "facilityId") Integer facilityId,
 			@WebParam(name = "date") Date date,
@@ -232,10 +232,7 @@ public interface RegistrarService {
 			@WebParam(name = "nhis") String nhis,
 			@WebParam(name = "nhisExpires") Date nhisExpires,
 			@WebParam(name = "motherMotechId") Integer motherMotechId,
-			@WebParam(name = "region") String region,
-			@WebParam(name = "district") String district,
-			@WebParam(name = "subDistrict") String subDistrict,
-			@WebParam(name = "community") String community,
+			@WebParam(name = "community") Integer community,
 			@WebParam(name = "address") String address,
 			@WebParam(name = "phoneNumber") Integer phoneNumber,
 			@WebParam(name = "expDeliveryDate") Date expDeliveryDate,
