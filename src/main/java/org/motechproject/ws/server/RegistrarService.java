@@ -318,7 +318,7 @@ public interface RegistrarService {
 			@WebParam(name = "facilityId") Integer facilityId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "motechId") Integer motechId,
-			@WebParam(name = "phoneNumber") String phoneNumber,
+			@WebParam(name = "phoneNumber") Integer phoneNumber,
 			@WebParam(name = "phoneOwnership") ContactNumberType phoneOwnership,
 			@WebParam(name = "nhis") String nhis,
 			@WebParam(name = "nhisExpires") Date nhisExpires,
@@ -438,7 +438,7 @@ public interface RegistrarService {
 			@WebParam(name = "preferredName") String preferredName,
 			@WebParam(name = "birthDate") Date birthDate,
 			@WebParam(name = "nhis") String nhis,
-			@WebParam(name = "phoneNumber") String phoneNumber)
+			@WebParam(name = "phoneNumber") Integer phoneNumber)
 			throws ValidationException;
 
 	@WebMethod
