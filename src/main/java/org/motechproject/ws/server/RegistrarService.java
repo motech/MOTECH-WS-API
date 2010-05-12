@@ -82,7 +82,7 @@ public interface RegistrarService {
 			throws ValidationException;
 
 	@WebMethod
-	public void recordPregnancyDelivery(
+	public Patient[] recordPregnancyDelivery(
 			@WebParam(name = "staffId") Integer staffId,
 			@WebParam(name = "facilityId") Integer facilityId,
 			@WebParam(name = "datetime") Date datetime,
