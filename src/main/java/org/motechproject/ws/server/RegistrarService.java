@@ -228,7 +228,7 @@ public interface RegistrarService {
 			@WebParam(name = "motherMotechId") Integer motherMotechId,
 			@WebParam(name = "community") Integer community,
 			@WebParam(name = "address") String address,
-			@WebParam(name = "phoneNumber") Integer phoneNumber,
+			@WebParam(name = "phoneNumber") String phoneNumber,
 			@WebParam(name = "expDeliveryDate") Date expDeliveryDate,
 			@WebParam(name = "deliveryDateConfirmed") Boolean deliveryDateConfirmed,
 			@WebParam(name = "gravida") Integer gravida,
@@ -254,7 +254,7 @@ public interface RegistrarService {
 			@WebParam(name = "enroll") Boolean enroll,
 			@WebParam(name = "consent") Boolean consent,
 			@WebParam(name = "ownership") ContactNumberType ownership,
-			@WebParam(name = "phoneNumber") Integer phoneNumber,
+			@WebParam(name = "phoneNumber") String phoneNumber,
 			@WebParam(name = "format") MediaType format,
 			@WebParam(name = "language") String language,
 			@WebParam(name = "dayOfWeek") DayOfWeek dayOfWeek,
@@ -277,7 +277,7 @@ public interface RegistrarService {
 			@WebParam(name = "enroll") Boolean enroll,
 			@WebParam(name = "consent") Boolean consent,
 			@WebParam(name = "ownership") ContactNumberType ownership,
-			@WebParam(name = "phoneNumber") Integer phoneNumber,
+			@WebParam(name = "phoneNumber") String phoneNumber,
 			@WebParam(name = "format") MediaType format,
 			@WebParam(name = "language") String language,
 			@WebParam(name = "dayOfWeek") DayOfWeek dayOfWeek,
@@ -296,7 +296,7 @@ public interface RegistrarService {
 			@WebParam(name = "enroll") Boolean enroll,
 			@WebParam(name = "consent") Boolean consent,
 			@WebParam(name = "ownership") ContactNumberType ownership,
-			@WebParam(name = "phoneNumber") Integer phoneNumber,
+			@WebParam(name = "phoneNumber") String phoneNumber,
 			@WebParam(name = "format") MediaType format,
 			@WebParam(name = "language") String language,
 			@WebParam(name = "dayOfWeek") DayOfWeek dayOfWeek,
@@ -312,7 +312,7 @@ public interface RegistrarService {
 			@WebParam(name = "facilityId") Integer facilityId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "motechId") Integer motechId,
-			@WebParam(name = "phoneNumber") Integer phoneNumber,
+			@WebParam(name = "phoneNumber") String phoneNumber,
 			@WebParam(name = "phoneOwnership") ContactNumberType phoneOwnership,
 			@WebParam(name = "nhis") String nhis,
 			@WebParam(name = "nhisExpires") Date nhisExpires,
@@ -432,7 +432,7 @@ public interface RegistrarService {
 			@WebParam(name = "preferredName") String preferredName,
 			@WebParam(name = "birthDate") Date birthDate,
 			@WebParam(name = "nhis") String nhis,
-			@WebParam(name = "phoneNumber") Integer phoneNumber)
+			@WebParam(name = "phoneNumber") String phoneNumber)
 			throws ValidationException;
 
 	@WebMethod
