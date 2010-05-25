@@ -259,9 +259,7 @@ public interface RegistrarService {
 			@WebParam(name = "language") String language,
 			@WebParam(name = "dayOfWeek") DayOfWeek dayOfWeek,
 			@WebParam(name = "timeOfDay") Date timeOfDay,
-			@WebParam(name = "reason") InterestReason reason,
-			@WebParam(name = "howLearned") HowLearned howLearned,
-			@WebParam(name = "messagesStartWeek") Integer messagesStartWeek)
+			@WebParam(name = "howLearned") HowLearned howLearned)
 			throws ValidationException;
 
 	@WebMethod
@@ -282,9 +280,7 @@ public interface RegistrarService {
 			@WebParam(name = "language") String language,
 			@WebParam(name = "dayOfWeek") DayOfWeek dayOfWeek,
 			@WebParam(name = "timeOfDay") Date timeOfDay,
-			@WebParam(name = "reason") InterestReason reason,
-			@WebParam(name = "howLearned") HowLearned howLearned,
-			@WebParam(name = "messagesStartWeek") Integer messagesStartWeek)
+			@WebParam(name = "howLearned") HowLearned howLearned)
 			throws ValidationException;
 
 	@WebMethod
@@ -301,9 +297,7 @@ public interface RegistrarService {
 			@WebParam(name = "language") String language,
 			@WebParam(name = "dayOfWeek") DayOfWeek dayOfWeek,
 			@WebParam(name = "timeOfDay") Date timeOfDay,
-			@WebParam(name = "reason") InterestReason reason,
-			@WebParam(name = "howLearned") HowLearned howLearned,
-			@WebParam(name = "messagesStartWeek") Integer messagesStartWeek)
+			@WebParam(name = "howLearned") HowLearned howLearned)
 			throws ValidationException;
 
 	@WebMethod
