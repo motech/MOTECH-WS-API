@@ -149,8 +149,8 @@ public interface RegistrarService {
 	public void recordDeath(@WebParam(name = "staffId") Integer staffId,
 			@WebParam(name = "facilityId") Integer facilityId,
 			@WebParam(name = "date") Date date,
-			@WebParam(name = "motechId") Integer motechId,
-			@WebParam(name = "cause") Integer cause) throws ValidationException;
+			@WebParam(name = "motechId") Integer motechId)
+			throws ValidationException;
 
 	@WebMethod
 	public void recordTTVisit(@WebParam(name = "staffId") Integer staffId,
