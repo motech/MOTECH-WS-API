@@ -5,7 +5,7 @@ import javax.xml.ws.WebFault;
 @WebFault(faultBean = "org.motechproject.ws.server.ValidationErrors")
 public class ValidationException extends Exception {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 
 	private ValidationErrors faultInfo;
 

@@ -5,18 +5,18 @@ import java.util.List;
 
 public class ValidationErrors {
 
-	private List<ValidationError> errors = new ArrayList<ValidationError>();
+	private List<String> errors = new ArrayList<String>();
 
-	public List<ValidationError> getErrors() {
+	public List<String> getErrors() {
 		return errors;
 	}
 
-	public void setErrors(List<ValidationError> errors) {
+	public void setErrors(List<String> errors) {
 		this.errors = errors;
 	}
 
-	public void add(int errorCode, String errorField) {
-		this.errors.add(new ValidationError(errorCode, errorField));
+	public void add(String errorMessage) {
+		this.errors.add(errorMessage);
 	}
 
 }
