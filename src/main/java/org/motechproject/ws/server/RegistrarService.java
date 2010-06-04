@@ -231,8 +231,6 @@ public interface RegistrarService {
 			@WebParam(name = "phoneNumber") String phoneNumber,
 			@WebParam(name = "expDeliveryDate") Date expDeliveryDate,
 			@WebParam(name = "deliveryDateConfirmed") Boolean deliveryDateConfirmed,
-			@WebParam(name = "gravida") Integer gravida,
-			@WebParam(name = "parity") Integer parity,
 			@WebParam(name = "enroll") Boolean enroll,
 			@WebParam(name = "consent") Boolean consent,
 			@WebParam(name = "ownership") ContactNumberType ownership,
