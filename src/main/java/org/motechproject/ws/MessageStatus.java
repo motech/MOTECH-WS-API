@@ -10,5 +10,5 @@ package org.motechproject.ws;
  * @author Jojo
  */
 public enum MessageStatus {
-    DELIVERED, PENDING, FAILED, RETRY, QUEUED, SCHEDULED
+    DELIVERED, PENDING, FAILED, REJECTED, RETRY, QUEUED, SCHEDULED
 }
