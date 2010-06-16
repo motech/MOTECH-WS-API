@@ -46,7 +46,7 @@ public interface RegistrarService {
 			@WebParam(name = "iptDose") Integer iptDose,
 			@WebParam(name = "iptReactive") Boolean iptReactive,
 			@WebParam(name = "itnUse") Boolean itnUse,
-			@WebParam(name = "fht") Integer fht,
+			@WebParam(name = "fht") Double fht,
 			@WebParam(name = "fhr") Integer fhr,
 			@WebParam(name = "urineTestProteinPositive") Boolean urineTestProteinPositive,
 			@WebParam(name = "urineTestGlucosePositive") Boolean urineTestGlucosePositive,
@@ -140,8 +140,8 @@ public interface RegistrarService {
 			@WebParam(name = "ttDose") Integer ttDose,
 			@WebParam(name = "lochiaColour") Integer lochiaColour,
 			@WebParam(name = "lochiaAmountExcess") Boolean lochiaAmountExcess,
-			@WebParam(name = "temperature") Integer temperature,
-			@WebParam(name = "fht") Integer fht,
+			@WebParam(name = "temperature") Double temperature,
+			@WebParam(name = "fht") Double fht,
 			@WebParam(name = "comments") String comments)
 			throws ValidationException;
 
@@ -173,7 +173,7 @@ public interface RegistrarService {
 			@WebParam(name = "referred") Boolean referred,
 			@WebParam(name = "maleInvolved") Boolean maleInvolved,
 			@WebParam(name = "weight") Double weight,
-			@WebParam(name = "temperature") Integer temperature,
+			@WebParam(name = "temperature") Double temperature,
 			@WebParam(name = "bcg") Boolean bcg,
 			@WebParam(name = "opv0") Boolean opv0,
 			@WebParam(name = "respiration") Integer respiration,
@@ -201,8 +201,8 @@ public interface RegistrarService {
 			@WebParam(name = "vitaminA") Boolean vitaminA,
 			@WebParam(name = "dewormer") Boolean dewormer,
 			@WebParam(name = "weight") Double weight,
-			@WebParam(name = "muac") Integer muac,
-			@WebParam(name = "height") Integer height,
+			@WebParam(name = "muac") Double muac,
+			@WebParam(name = "height") Double height,
 			@WebParam(name = "maleInvolved") Boolean maleInvolved,
 			@WebParam(name = "comments") String comments)
 			throws ValidationException;
