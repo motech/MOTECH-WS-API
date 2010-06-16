@@ -267,7 +267,7 @@ public interface RegistrarService {
 			@WebParam(name = "motechId") Integer motechId,
 			@WebParam(name = "ancRegNumber") String ancRegNumber,
 			@WebParam(name = "estDeliveryDate") Date estDeliveryDate,
-			@WebParam(name = "height") Integer height,
+			@WebParam(name = "height") Double height,
 			@WebParam(name = "gravida") Integer gravida,
 			@WebParam(name = "parity") Integer parity,
 			@WebParam(name = "enroll") Boolean enroll,
