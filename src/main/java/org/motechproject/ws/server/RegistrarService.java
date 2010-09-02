@@ -140,6 +140,7 @@ public interface RegistrarService {
 			@WebParam(name = "ttDose") Integer ttDose,
 			@WebParam(name = "lochiaColour") Integer lochiaColour,
 			@WebParam(name = "lochiaAmountExcess") Boolean lochiaAmountExcess,
+			@WebParam(name = "lochiaOdourFoul") Boolean lochiaOdourFoul,
 			@WebParam(name = "temperature") Double temperature,
 			@WebParam(name = "fht") Double fht,
 			@WebParam(name = "comments") String comments)
