@@ -29,6 +29,34 @@ import org.motechproject.ws.RegistrationMode;
 public interface RegistrarService {
 
 	@WebMethod
+	public void recordPatientHistory(
+			@WebParam(name = "staffId") Integer staffId,
+			@WebParam(name = "facilityId") Integer facilityId,
+			@WebParam(name = "date") Date date,
+			@WebParam(name = "motechId") Integer motechId,
+			@WebParam(name = "lastANC") Integer lastANC,
+			@WebParam(name = "lastANCDate") Date lastANCDate,
+			@WebParam(name = "lastIPT") Integer lastIPT,
+			@WebParam(name = "lastIPTDate") Date lastIPTDate,
+			@WebParam(name = "lastTT") Integer lastTT,
+			@WebParam(name = "lastTTDate") Date lastTTDate,
+			@WebParam(name = "lastPNCMotherVisit") Integer lastPNCMotherVisit,
+			@WebParam(name = "lastPNCMotherDate") Date lastPNCMotherDate,
+			@WebParam(name = "lastPNCChildVisit") Integer lastPNCChildVisit,
+			@WebParam(name = "lastPNCChildDate") Date lastPNCChildDate,
+			@WebParam(name = "bcgDate") Date bcgDate,
+			@WebParam(name = "lastOPV") Integer lastOPV,
+			@WebParam(name = "lastOPVDate") Date lastOPVDate,
+			@WebParam(name = "lastPenta") Integer lastPenta,
+			@WebParam(name = "lastPentaDate") Date lastPentaDate,
+			@WebParam(name = "measlesDate") Date measlesDate,
+			@WebParam(name = "yellowFeverDate") Date yellowFeverDate,
+			@WebParam(name = "lastIPTI") Integer lastIPTI,
+			@WebParam(name = "lastIPTIDate") Date lastIPTIDate,
+			@WebParam(name = "lastVitaminADate") Date lastVitaminADate)
+			throws ValidationException;
+
+	@WebMethod
 	public void recordMotherANCVisit(
 			@WebParam(name = "staffId") Integer staffId,
 			@WebParam(name = "facilityId") Integer facilityId,
