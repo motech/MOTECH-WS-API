@@ -13,6 +13,7 @@ import org.motechproject.ws.MediaType;
 import org.motechproject.ws.MessageStatus;
 import org.motechproject.ws.NameValuePair;
 import org.motechproject.ws.Patient;
+import org.motechproject.ws.PatientMessage;
 
 /**
  * A webservice interface providing functionality for sending messages
@@ -23,6 +24,14 @@ import org.motechproject.ws.Patient;
 @WebService
 public interface MessageService extends Serializable{
 
+    /**
+     * Sends messages to registered patients
+     *
+     * @param messages List of messages to be sent
+     */
+    @WebMethod
+    public void sendPatientMessages(@WebParam(name="messages") PatientMessage[] messages);
+	
     /**
      * Sends a message to a registered patient
      *
