@@ -145,4 +145,23 @@ public interface MessageService extends Serializable{
     @WebMethod
     public MessageStatus sendMessage(@WebParam(name = "content") String content,
                                      @WebParam(name = "recipient") String recipient);
+
+    /**
+     * Sends multiple upcoming care messages to a CHPS worker
+     *
+     * @param messageId Id of the message to send
+     * @param workerNumber CHPS worker's mobile contact number
+     * @param cares List of upcoming care
+     * @param mediaType Patient's preferred communication medium
+     * @param startDate Date to begin message sending attempts
+     * @param endDate Date to stop message sending attempts
+     * @return The status of the message
+     */
+    @WebMethod
+    public MessageStatus sendBulkCaresMessage(@WebParam(name = "messageId") String messageId,
+                                                  @WebParam(name = "workerNumber") String workerNumber,
+                                                  @WebParam(name = "patient") Care[] cares,
+                                                  @WebParam(name = "mediaType") MediaType mediaType,
+                                                  @WebParam(name = "startDate") Date startDate,
+                                                  @WebParam(name = "endDate") Date endDate);
 }
