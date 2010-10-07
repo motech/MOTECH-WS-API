@@ -145,9 +145,9 @@
 	</build>
 
 	<scm>
-		<url>https://motech.rcg.usm.maine.edu/redmine/repositories/browse/motech-wsapi/trunk</url>
-		<connection>scm:svn:https://motech.rcg.usm.maine.edu/svn/motech-wsapi/trunk</connection>
-		<developerConnection>scm:svn:https://motech.rcg.usm.maine.edu/svn/motech-wsapi/trunk</developerConnection>
+		<url>https://motech.rcg.usm.maine.edu/redmine/repositories/browse/motech-wsapi/branches/0.7.X</url>
+		<connection>scm:svn:https://motech.rcg.usm.maine.edu/svn/motech-wsapi/branches/0.7.X</connection>
+		<developerConnection>scm:svn:https://motech.rcg.usm.maine.edu/svn/motech-wsapi/branches/0.7.X</developerConnection>
 	</scm>
 
 	<profiles>
