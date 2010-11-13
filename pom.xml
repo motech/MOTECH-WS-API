@@ -146,8 +146,8 @@
 
 	<scm>
 		<url>https://motech.rcg.usm.maine.edu/redmine/repositories/browse/motech-wsapi/trunk</url>
-		<connection>scm:svn:https://motech.rcg.usm.maine.edu/svn/motech-wsapi/trunk</connection>
-		<developerConnection>scm:svn:https://motech.rcg.usm.maine.edu/svn/motech-wsapi/trunk</developerConnection>
+		<connection>scm:git:ssh://git@github.com/motech/MOTECH-WS-API.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/motech/MOTECH-WS-API.git</developerConnection>
 	</scm>
 
 	<profiles>
