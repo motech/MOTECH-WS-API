@@ -155,7 +155,7 @@
 			<id>ci</id>
 			<activation>
 				<file>
-					<exists>/home/build/ci-server</exists>
+					<exists>/var/lib/hudson/ci-server</exists>
 				</file>
 			</activation>
 			<distributionManagement>
