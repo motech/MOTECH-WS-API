@@ -162,12 +162,12 @@
 				<repository>
 					<id>usm.motech.archiva</id>
 					<name>Motech Releases Repository</name>
-                                        <url>http://motech.rcg.usm.maine.edu/archiva/repository/internal/</url>
+                                        <url>http://motech.rcg.usm.maine.edu/archiva/repository/internal</url>
 				</repository>
 				<snapshotRepository>
 					<id>usm.motech.archiva</id>
 					<name>Motech Snapshots Repository</name>
-                                        <url>http://motech.rcg.usm.maine.edu/archiva/repository/snapshots/</url>
+                                        <url>http://motech.rcg.usm.maine.edu/archiva/repository/snapshots</url>
 				</snapshotRepository>
 			</distributionManagement>
 		</profile>
