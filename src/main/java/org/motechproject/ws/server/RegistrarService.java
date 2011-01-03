@@ -335,6 +335,7 @@ public interface RegistrarService {
 			@WebParam(name = "phoneOwnership") ContactNumberType phoneOwnership,
 			@WebParam(name = "nhis") String nhis,
 			@WebParam(name = "nhisExpires") Date nhisExpires,
+            @WebParam(name = "edd") Date expectedDeliveryDate,
 			@WebParam(name = "stopEnrollment") Boolean stopEnrollment)
 			throws ValidationException;
 
