@@ -1,24 +1,11 @@
 package org.motechproject.ws.server;
 
-import java.util.Date;
+import org.motechproject.ws.*;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
-
-import org.motechproject.ws.BirthOutcome;
-import org.motechproject.ws.Care;
-import org.motechproject.ws.ContactNumberType;
-import org.motechproject.ws.DayOfWeek;
-import org.motechproject.ws.Gender;
-import org.motechproject.ws.HIVResult;
-import org.motechproject.ws.HowLearned;
-import org.motechproject.ws.InterestReason;
-import org.motechproject.ws.LogType;
-import org.motechproject.ws.MediaType;
-import org.motechproject.ws.Patient;
-import org.motechproject.ws.RegistrantType;
-import org.motechproject.ws.RegistrationMode;
+import java.util.Date;
 
 /**
  * The service endpoint interface for the major motech server web service
@@ -327,6 +314,7 @@ public interface RegistrarService {
 			@WebParam(name = "facilityId") Integer facilityId,
 			@WebParam(name = "date") Date date,
 			@WebParam(name = "motechId") Integer motechId,
+            @WebParam(name = "mothersMotechId") Integer mothersMotechId,
             @WebParam(name = "firstName") String firstName,
             @WebParam(name = "middleName") String middleName,
             @WebParam(name = "lastName") String lastName,
