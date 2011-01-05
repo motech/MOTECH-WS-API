@@ -142,6 +142,17 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+                <plugins>
+		  <plugin>
+		    <groupId>com.mycila.maven-license-plugin</groupId>
+		    <artifactId>maven-license-plugin</artifactId>
+		    <version>1.8.0</version>
+		    <configuration>
+                      <header>header.txt</header>
+                      <strictCheck>true</strictCheck>
+		    </configuration>
+		  </plugin>
+                </plugins>
 	</build>
 
 	<scm>
