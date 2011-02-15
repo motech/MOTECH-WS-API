@@ -283,7 +283,10 @@ public interface RegistrarService {
 			@WebParam(name = "timeOfDay") Date timeOfDay,
 			@WebParam(name = "reason") InterestReason reason,
 			@WebParam(name = "howLearned") HowLearned howLearned,
-			@WebParam(name = "messagesStartWeek") Integer messagesStartWeek)
+			@WebParam(name = "messagesStartWeek") Integer messagesStartWeek,
+            @WebParam(name = "cwcRegNumber") String cwcRegNumber,
+            @WebParam(name = "cwcRegDateToday") Boolean cwcRegDateToday,
+            @WebParam(name = "cwcRegDate") Date cwcRegDate)
 			throws ValidationException;
 
 	@WebMethod
