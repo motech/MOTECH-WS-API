@@ -34,6 +34,7 @@
 package org.motechproject.ws.server;
 
 import org.motechproject.ws.*;
+import org.motechproject.ws.rct.RCTRegistrationConfirmation;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -511,7 +512,7 @@ public interface RegistrarService {
             @WebParam(name = "success") Boolean success);
 
     @WebMethod
-    public RCTPatient registerForRCT(@WebParam(name = "staffId") Integer staffId,
+    public RCTRegistrationConfirmation registerForRCT(@WebParam(name = "staffId") Integer staffId,
                                      @WebParam(name = "facilityId") Integer facilityId,
                                      @WebParam(name = "motechId") Integer motechId) throws ValidationException;
 
