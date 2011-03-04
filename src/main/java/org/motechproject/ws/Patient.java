@@ -35,7 +35,6 @@ package org.motechproject.ws;
 
 import org.motechproject.ws.rct.PregnancyTrimester;
 
-import java.util.Calendar;
 import java.util.Date;
 
 public class Patient {
@@ -157,24 +156,5 @@ public class Patient {
 
     public void setContactNumberType(ContactNumberType contactNumberType) {
         this.contactNumberType = contactNumberType;
-    }
-
-    public PregnancyTrimester getPregnancyTrimester() {
-        Date today = new Date();
-
-        Calendar dueDeliveryDate = Calendar.getInstance();
-        dueDeliveryDate.setTime(deliveryDate);
-
-        dueDeliveryDate.add(Calendar.MONTH, -3);
-
-        if (today.after(dueDeliveryDate.getTime()))
-            return PregnancyTrimester.THIRD;
-
-        dueDeliveryDate.add(Calendar.MONTH, -3);
-
-        if (today.after(dueDeliveryDate.getTime()))
-            return PregnancyTrimester.SECOND;
-
-        return PregnancyTrimester.FIRST;
     }
 }
