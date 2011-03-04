@@ -514,6 +514,8 @@ public interface RegistrarService {
     @WebMethod
     public RCTRegistrationConfirmation registerForRCT(@WebParam(name = "staffId") Integer staffId,
                                      @WebParam(name = "facilityId") Integer facilityId,
-                                     @WebParam(name = "motechId") Integer motechId) throws ValidationException;
+                                     @WebParam(name = "motechId") Integer motechId,
+                                     @WebParam(name = "ownership") ContactNumberType ownership,
+                                     @WebParam(name = "regPhone") String regPhone) throws ValidationException;
 
 }
