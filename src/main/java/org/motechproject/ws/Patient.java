@@ -161,11 +161,11 @@ public class Patient {
     }
 
     public PregnancyTrimester pregnancyTrimester() {
-        Date estimatedDueDate = this.getEstimateDueDate();
-        if(estimatedDueDate == null){
+
+        if (!isPregnancyRegistered())
             return PregnancyTrimester.NONE;
-        }
-        DateTime deliveryDate = new DateTime(estimatedDueDate.getTime());
+
+        DateTime deliveryDate = new DateTime(estimateDueDate.getTime());
         DateTime today = new DateTime(new Date().getTime());
         Months months = Months.monthsBetween(today, deliveryDate);
         int monthsDiff = Math.abs(months.getMonths());
@@ -174,6 +174,14 @@ public class Patient {
         if (monthsDiff <= 6) return PregnancyTrimester.SECOND;
 
         return PregnancyTrimester.FIRST;
+    }
+
+    public boolean isPregnancyRegistered() {
+        return estimateDueDate != null;
+    }
+
+    public boolean isInFirstWeekOfPregnancy() {
+        return isPregnancyRegistered() && PregnancyTrimester.FIRST.equals(pregnancyTrimester());
     }
 
 }

@@ -1,17 +1,17 @@
 package org.motechproject.ws.rct;
 
 public enum ControlGroup {
-    T(true,"TEST") , C(false,"CONTROL")  ;
-    private boolean isTest;
+    T(true,"TREATMENT") , C(false,"CONTROL")  ;
+    private boolean isTreatment;
     private String value;
 
     private ControlGroup(boolean isTest,String value) {
-        this.isTest = isTest;
+        this.isTreatment = isTest;
         this.value =  value ;
     }
 
-    public boolean isTest(){
-        return isTest ;
+    public boolean isTreatment(){
+        return isTreatment;
     }
 
     public String value() {
