@@ -18,4 +18,16 @@ public class RCTRegistrationConfirmation {
         return controlGroup.isTest();
     }
 
+    public String toString(){
+        StringBuilder message = new StringBuilder();
+
+        message.append(patient.getPreferredName());
+        message.append(" With MoTeCH ID ");
+        message.append(patient.getMotechId());
+        message.append(" has been successfully registered as ");
+        message.append(controlGroup.value());
+
+        return message.toString();
+    }
+
 }
