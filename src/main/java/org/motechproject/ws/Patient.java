@@ -33,6 +33,8 @@
 
 package org.motechproject.ws;
 
+import org.joda.time.DateTime;
+import org.joda.time.Months;
 import org.motechproject.ws.rct.PregnancyTrimester;
 
 import java.util.Date;
@@ -157,4 +159,21 @@ public class Patient {
     public void setContactNumberType(ContactNumberType contactNumberType) {
         this.contactNumberType = contactNumberType;
     }
+
+    public PregnancyTrimester pregnancyTrimester() {
+        Date estimatedDueDate = this.getEstimateDueDate();
+        if(estimatedDueDate == null){
+            return PregnancyTrimester.NONE;
+        }
+        DateTime deliveryDate = new DateTime(estimatedDueDate.getTime());
+        DateTime today = new DateTime(new Date().getTime());
+        Months months = Months.monthsBetween(today, deliveryDate);
+        int monthsDiff = Math.abs(months.getMonths());
+
+        if (monthsDiff <= 3) return PregnancyTrimester.THIRD;
+        if (monthsDiff <= 6) return PregnancyTrimester.SECOND;
+
+        return PregnancyTrimester.FIRST;
+    }
+
 }

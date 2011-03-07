@@ -1,5 +1,5 @@
 package org.motechproject.ws.rct;
 
 public enum PregnancyTrimester {
-  FIRST , SECOND , THIRD
+  NONE, FIRST , SECOND , THIRD
 }
