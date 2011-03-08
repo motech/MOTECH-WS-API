@@ -35,9 +35,4 @@ public class RCTRegistrationConfirmation {
         }
         return message.toString();
     }
-
-    public boolean isEmpty() {
-        return patient == null || controlGroup == null;
-    }
-
 }

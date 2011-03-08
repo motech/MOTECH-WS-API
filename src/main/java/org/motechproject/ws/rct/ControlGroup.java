@@ -1,7 +1,7 @@
 package org.motechproject.ws.rct;
 
 public enum ControlGroup {
-    T(true,"TREATMENT") , C(false,"CONTROL")  ;
+    T(true,"TREATMENT") , C(false,"CONTROL") ;
     private boolean isTreatment;
     private String value;
 
