@@ -9,18 +9,15 @@ public class RCTRegistrationConfirmation {
 
     private Patient patient;
     private ControlGroup controlGroup;
-    private Boolean isValid;
 
     private List<String> errors = new ArrayList<String>();
 
     public RCTRegistrationConfirmation() {
-        isValid = false;
     }
 
     public RCTRegistrationConfirmation(Patient patient, ControlGroup controlGroup) {
         this.patient = patient;
         this.controlGroup = controlGroup;
-        isValid = true;
     }
 
     public boolean isATreatmentSubject() {
@@ -39,8 +36,8 @@ public class RCTRegistrationConfirmation {
         return message.toString();
     }
 
-    public boolean isValid() {
-        return isValid;
+    public boolean isEmpty() {
+        return patient == null || controlGroup == null;
     }
 
 }
