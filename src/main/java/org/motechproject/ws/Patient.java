@@ -180,7 +180,7 @@ public class Patient {
         return estimateDueDate != null;
     }
 
-    public boolean isInFirstWeekOfPregnancy() {
+    public boolean isInFirstTrimesterOfPregnancy() {
         return isPregnancyRegistered() && PregnancyTrimester.FIRST.equals(pregnancyTrimester());
     }
 
