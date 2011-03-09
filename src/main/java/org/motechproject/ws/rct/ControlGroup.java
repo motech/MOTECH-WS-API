@@ -1,18 +1,36 @@
 package org.motechproject.ws.rct;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 public enum ControlGroup {
-    T(true,"TREATMENT") , C(false,"CONTROL") ;
-    private boolean isTreatment;
+    T("TREATMENT") {
+
+        @Override
+        public boolean isTreatment() {
+            return true;
+        }},
+
+    C("CONTROL") {
+
+        @Override
+        public boolean isTreatment() {
+            return false;
+        }},
+
+    NONE("NONE") {
+
+        @Override
+        public boolean isTreatment() {
+            throw new NotImplementedException();
+        }};
+
     private String value;
 
-    private ControlGroup(boolean isTest,String value) {
-        this.isTreatment = isTest;
-        this.value =  value ;
+    private ControlGroup(String value) {
+        this.value = value;
     }
 
-    public boolean isTreatment(){
-        return isTreatment;
-    }
+    public abstract boolean isTreatment();
 
     public String value() {
         return value;
