@@ -33,8 +33,6 @@
 
 package org.motechproject.ws;
 
-import org.joda.time.DateTime;
-import org.joda.time.Months;
 import org.motechproject.ws.rct.PregnancyTrimester;
 
 import java.util.Date;
@@ -165,13 +163,12 @@ public class Patient {
         if (!isPregnancyRegistered())
             return PregnancyTrimester.NONE;
 
-        DateTime deliveryDate = new DateTime(estimateDueDate.getTime());
-        DateTime today = new DateTime(new Date().getTime());
-        Months months = Months.monthsBetween(today, deliveryDate);
-        int monthsDiff = Math.abs(months.getMonths());
+        Pregnancy pregnancy = new Pregnancy(estimateDueDate);
 
-        if (monthsDiff <= 3) return PregnancyTrimester.THIRD;
-        if (monthsDiff <= 6) return PregnancyTrimester.SECOND;
+        Date today = new Date();
+        if (pregnancy.inThirdTrimester(today)) return PregnancyTrimester.THIRD;
+
+        if (pregnancy.inSecondTrimester(today)) return PregnancyTrimester.SECOND;
 
         return PregnancyTrimester.FIRST;
     }
