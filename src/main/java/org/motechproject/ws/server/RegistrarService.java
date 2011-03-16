@@ -293,7 +293,21 @@ public interface RegistrarService {
             @WebParam(name = "ancRegDate") Date ancRegDate,
             @WebParam(name = "height") Double height,
             @WebParam(name = "gravida") Integer gravida,
-            @WebParam(name = "parity") Integer parity)
+            @WebParam(name = "parity") Integer parity,
+            @WebParam(name = "lastIPT") Integer lastIPT,
+            @WebParam(name = "lastIPTDate") Date lastIPTDate,
+            @WebParam(name = "lastTT") Integer lastTT,
+            @WebParam(name = "lastTTDate") Date lastTTDate,
+            @WebParam(name = "bcgDate") Date bcgDate,
+            @WebParam(name = "lastOPV") Integer lastOPV,
+            @WebParam(name = "lastOPVDate") Date lastOPVDate,
+            @WebParam(name = "lastPenta") Integer lastPenta,
+            @WebParam(name = "lastPentaDate") Date lastPentaDate,
+            @WebParam(name = "measlesDate") Date measlesDate,
+            @WebParam(name = "yellowFeverDate") Date yellowFeverDate,
+            @WebParam(name = "lastIPTI") Integer lastIPTI,
+            @WebParam(name = "lastIPTIDate") Date lastIPTIDate,
+            @WebParam(name = "lastVitaminADate") Date lastVitaminADate)
             throws ValidationException;
 
     @WebMethod
