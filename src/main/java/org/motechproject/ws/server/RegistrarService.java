@@ -307,7 +307,8 @@ public interface RegistrarService {
             @WebParam(name = "yellowFeverDate") Date yellowFeverDate,
             @WebParam(name = "lastIPTI") Integer lastIPTI,
             @WebParam(name = "lastIPTIDate") Date lastIPTIDate,
-            @WebParam(name = "lastVitaminADate") Date lastVitaminADate)
+            @WebParam(name = "lastVitaminADate") Date lastVitaminADate,
+            @WebParam(name = "whyNoHistory") Integer whyNoHistory)
             throws ValidationException;
 
     @WebMethod
