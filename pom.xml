@@ -10,89 +10,16 @@
 
 	<url>http://motech.rcg.usm.maine.edu/redmine/projects/show/motech-wsapi</url>
 
-	<developers>
-		<developer>
-			<id>batkinson</id>
-			<name>Brent Atkinson</name>
-			<email>batkinson@usm.maine.edu</email>
-			<timezone>-5</timezone>
-		</developer>
-		<developer>
-			<id>mblanch</id>
-			<name>Matt Blanchette</name>
-			<email>matt.blanchette@gmail.com</email>
-			<timezone>-5</timezone>
-		</developer>
-		<developer>
-			<id>henry</id>
-			<name>Henry Sampson</name>
-			<email>henry@dreamoval.com</email>
-			<organization>DreamOval</organization>
-			<timezone>0</timezone>
-		</developer>
-		<developer>
-			<id>joseph</id>
-			<name>Joseph Djomeda</name>
-			<email>joseph@dreamoval.com</email>
-			<organization>DreamOval</organization>
-			<timezone>0</timezone>
-		</developer>
-		<developer>
-			<id>k.asamoah</id>
-			<name>Kofi Asamoah</name>
-			<email>yoofi@dreamoval.com</email>
-			<organization>DreamOval</organization>
-			<timezone>0</timezone>
-		</developer>
-	</developers>
-
-	<ciManagement>
-		<system>continuum</system>
-		<url>http://motech.rcg.usm.maine.edu/continuum/</url>
-		<notifiers>
-			<notifier>
-				<type>mail</type>
-				<configuration>
-					<address>batkinson@usm.maine.edu</address>
-				</configuration>
-			</notifier>
-			<notifier>
-				<type>mail</type>
-				<configuration>
-					<address>matt.blanchette@gmail.com</address>
-				</configuration>
-			</notifier>
-			<notifier>
-				<type>mail</type>
-				<configuration>
-					<address>henry@dreamoval.com</address>
-				</configuration>
-			</notifier>
-			<notifier>
-				<type>mail</type>
-				<configuration>
-					<address>joseph@dreamoval.com</address>
-				</configuration>
-			</notifier>
-			<notifier>
-				<type>mail</type>
-				<configuration>
-					<address>yoofi@dreamoval.com</address>
-				</configuration>
-			</notifier>
-		</notifiers>
-	</ciManagement>
-
-	<issueManagement>
-		<system>redmine</system>
-		<url>http://motech.rcg.usm.maine.edu/redmine/projects/motech-wsapi/issues</url>
-	</issueManagement>
-
 	<repositories>
 		<repository>
 			<id>motech-repo</id>
-			<name>Motech Maven Repository</name>
-			<url>http://motech.rcg.usm.maine.edu/archiva/repository/all</url>
+			<name>Motech Maven Release Repository</name>
+			<url>http://nexus.motechproject.org/content/repository/release</url>
+		</repository>
+		<repository>
+			<id>motech-repo</id>
+			<name>Motech Maven Snapshot Repository</name>
+			<url>http://nexus.motechproject.org/content/repository/snapshot</url>
 		</repository>
 	</repositories>
 
@@ -100,7 +27,7 @@
 		<pluginRepository>
 			<id>motech-repo</id>
 			<name>Motech Maven Repository</name>
-			<url>http://motech.rcg.usm.maine.edu/archiva/repository/all</url>
+			<url>http://nexus.motechproject.org/repository/public</url>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
@@ -171,14 +98,14 @@
 			</activation>
 			<distributionManagement>
 				<repository>
-					<id>usm.motech.archiva</id>
+					<id>motech.nexus</id>
 					<name>Motech Releases Repository</name>
-                                        <url>http://motech.rcg.usm.maine.edu/archiva/repository/internal</url>
+                    <url>http://nexus.motechproject.org/content/repository/releases</url>
 				</repository>
 				<snapshotRepository>
-					<id>usm.motech.archiva</id>
+					<id>motech.nexus</id>
 					<name>Motech Snapshots Repository</name>
-                                        <url>http://motech.rcg.usm.maine.edu/archiva/repository/snapshots</url>
+                    <url>http://nexus.motechproject.org/content/repositories/snapshots</url>
 				</snapshotRepository>
 			</distributionManagement>
 		</profile>
