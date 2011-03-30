@@ -22,6 +22,10 @@ public enum ControlGroup {
         @Override
         public boolean isTreatment() {
             throw new NotImplementedException();
+        }
+        @Override
+        public Boolean isAssignable() {
+            return Boolean.FALSE;
         }};
 
     private String value;
@@ -31,6 +35,10 @@ public enum ControlGroup {
     }
 
     public abstract boolean isTreatment();
+
+    public Boolean isAssignable() {
+        return Boolean.TRUE;
+    }
 
     public String value() {
         return value;
