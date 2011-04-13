@@ -39,14 +39,8 @@ import java.util.Date;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
-import org.motechproject.ws.Care;
 
-import org.motechproject.ws.ContactNumberType;
-import org.motechproject.ws.MediaType;
-import org.motechproject.ws.MessageStatus;
-import org.motechproject.ws.NameValuePair;
-import org.motechproject.ws.Patient;
-import org.motechproject.ws.PatientMessage;
+import org.motechproject.ws.*;
 
 /**
  * A webservice interface providing functionality for sending messages
@@ -124,6 +118,7 @@ public interface MessageService extends Serializable{
     public MessageStatus sendDefaulterMessage(@WebParam(name = "messageId") String messageId,
                                               @WebParam(name = "workerNumber") String workerNumber,
                                               @WebParam(name = "cares") Care[] cares,
+                                              @WebParam(name = "groupingStrategy") CareMessageGroupingStrategy groupingStrategy,
                                               @WebParam(name = "media") MediaType mediaType,
                                               @WebParam(name = "startDate") Date startDate,
                                               @WebParam(name = "endDate") Date endDate);
@@ -194,6 +189,7 @@ public interface MessageService extends Serializable{
     public MessageStatus sendBulkCaresMessage(@WebParam(name = "messageId") String messageId,
                                                   @WebParam(name = "workerNumber") String workerNumber,
                                                   @WebParam(name = "patient") Care[] cares,
+                                                  @WebParam(name = "groupingStrategy") CareMessageGroupingStrategy groupingStrategy,
                                                   @WebParam(name = "mediaType") MediaType mediaType,
                                                   @WebParam(name = "startDate") Date startDate,
                                                   @WebParam(name = "endDate") Date endDate);
