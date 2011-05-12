@@ -289,7 +289,7 @@ public interface RegistrarService {
             @WebParam(name = "cwcRegDateToday") Boolean cwcRegDateToday,
             @WebParam(name = "cwcRegDate") Date cwcRegDate,
             @WebParam(name = "ancRegNumber") String ancRegNumber,
-            @WebParam(name = "ancRegDateToday") Boolean ancRegDateToday,
+            @WebParam(name = "ancRegDateToday") String ancRegDateToday,
             @WebParam(name = "ancRegDate") Date ancRegDate,
             @WebParam(name = "height") Double height,
             @WebParam(name = "gravida") Integer gravida,
