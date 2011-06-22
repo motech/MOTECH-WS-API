@@ -535,4 +535,8 @@ public interface RegistrarService {
                                      @WebParam(name = "ownership") ContactNumberType ownership,
                                      @WebParam(name = "regPhone") String regPhone) throws ValidationException;
 
+
+    @WebMethod
+    public MotechStaff getStaffDetails(@WebParam(name = "staffId") String staffId);
+
 }
