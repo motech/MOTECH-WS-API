@@ -233,6 +233,7 @@ public interface RegistrarService {
             @WebParam(name = "facilityId") Integer facilityId,
             @WebParam(name = "date") Date date,
             @WebParam(name = "motechId") Integer motechId,
+            @WebParam(name = "serialNumber") String serialNumber,
             @WebParam(name = "cwcLocation") Integer cwcLocation,
             @WebParam(name = "house") String house,
             @WebParam(name = "community") String community,
