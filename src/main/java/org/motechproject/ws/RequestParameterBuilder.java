@@ -21,12 +21,18 @@ public class RequestParameterBuilder {
     }
 
     public RequestParameterBuilder append(String key, String value) throws UnsupportedEncodingException {
-        builder.append(key).append("=").append(encode(value)).append(AMP);
+        if (isNotBlank(key) && isNotBlank(value)) {
+            builder.append(key).append("=").append(encode(value)).append(AMP);
+        }
         return this;
     }
 
     private String encode(String value) throws UnsupportedEncodingException {
         return URLEncoder.encode(value, encoding);
+    }
+
+    private Boolean isNotBlank(String value) {
+        return value != null && !value.trim().isEmpty();
     }
 
     @Override
