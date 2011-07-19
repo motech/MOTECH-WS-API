@@ -237,20 +237,16 @@ public interface RegistrarService {
             @WebParam(name = "cwcLocation") Integer cwcLocation,
             @WebParam(name = "house") String house,
             @WebParam(name = "community") String community,
-            @WebParam(name = "bcg") Boolean bcg,
+            @WebParam(name = "immunizations") String immunizations,
             @WebParam(name = "opvDose") Integer opvDose,
             @WebParam(name = "pentaDose") Integer pentaDose,
-            @WebParam(name = "measles") Boolean measles,
-            @WebParam(name = "yellowFever") Boolean yellowFever,
-            @WebParam(name = "csm") Boolean csm,
             @WebParam(name = "iptiDose") Integer iptiDose,
-            @WebParam(name = "vitaminA") Boolean vitaminA,
-            @WebParam(name = "dewormer") Boolean dewormer,
             @WebParam(name = "weight") Double weight,
             @WebParam(name = "muac") Double muac,
             @WebParam(name = "height") Double height,
             @WebParam(name = "maleInvolved") Boolean maleInvolved,
-            @WebParam(name = "comments") String comments)
+            @WebParam(name = "comments") String comments
+    )
             throws ValidationException;
 
     @WebMethod
