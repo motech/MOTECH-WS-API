@@ -535,4 +535,7 @@ public interface RegistrarService {
     @WebMethod
     public MotechStaff getStaffDetails(@WebParam(name = "staffId") String staffId);
 
+    @WebMethod
+    public Response processSMS(@WebParam(name ="sms")SMS sms);
+
 }
