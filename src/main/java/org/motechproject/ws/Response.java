@@ -2,6 +2,7 @@ package org.motechproject.ws;
 
 public class Response {
     private String content;
+    private Boolean success = Boolean.FALSE;
 
     public Response(){}
 
@@ -15,5 +16,13 @@ public class Response {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public void markSuccess(){
+        success = Boolean.TRUE;
+    }
+
+    public Boolean isSuccess(){
+        return success ;
     }
 }
